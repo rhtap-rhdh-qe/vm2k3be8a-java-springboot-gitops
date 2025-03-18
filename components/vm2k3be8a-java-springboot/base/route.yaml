@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: vm2k3be8a-java-springboot
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: vm2k3be8a-java-springboot 
+  name: vm2k3be8a-java-springboot
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: vm2k3be8a-java-springboot
+    weight: 100 
